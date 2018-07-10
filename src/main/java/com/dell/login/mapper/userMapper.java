@@ -34,9 +34,14 @@ public interface userMapper {
     @Select("select * from userlogin.articals limit #{start},10")
     @Results({
             @Result(property = "author", column = "author"),
-            @Result(property = "title", column = "title")
+            @Result(property = "title", column = "title"),
+            @Result(property = "id", column = "id")
     })
     List<userEntity> getBlog(int start);
 
-
+    @Select("select content from articals where id=#{id}")
+    @Results({
+            @Result(property = "content",column = "content")
+    })
+    String getContent(int id);
 }

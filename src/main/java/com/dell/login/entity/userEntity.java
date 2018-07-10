@@ -5,12 +5,19 @@ import java.io.Serializable;
 public class userEntity implements Serializable{
     private String userName;
     private String userPassword;
-
+    private int id;
     private String author;
     private String content;
     private String title;
     private int traffic;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAuthor() {
         return author;

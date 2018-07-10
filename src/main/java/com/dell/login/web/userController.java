@@ -80,6 +80,14 @@ public class userController {
 
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/showContent")
+    public String showContent(int id){
+        String result = UserMapper.getContent(id);
+        return result;
+    }
+
+
 
 
 
