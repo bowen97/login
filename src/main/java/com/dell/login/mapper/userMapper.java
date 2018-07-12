@@ -19,13 +19,13 @@ public interface userMapper {
     @Insert("INSERT INTO articals (author,content,title,traffic) VALUES(#{author},#{content},#{title},#{traffic})")
     void insert(userEntity user);
 
-    @Update("update userlogin.articals set content = #{content} where title = #{title} and author = #{author}")
+    @Update("update articals set content = #{content} where title = #{title} and author = #{author}")
     void update(userEntity user);
 
-    @Delete("delete from userlogin.articals where author = #{author} and title = #{title}")
-    void delete(userEntity user);
+    @Delete("delete from articals where id=#{id}")
+    void delete(int id);
 
-    @Select("select count(1) from userlogin.articals")
+    @Select("select count(1) from articals")
     @Results({
             @Result(property = "count(1)", column = "count(1)")
     })

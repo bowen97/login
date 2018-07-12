@@ -65,8 +65,8 @@ public class userController {
 
     @ResponseBody
     @RequestMapping(value = "/deleteBlog")
-    public void deleteBlog(userEntity user){
-        UserMapper.delete(user);
+    public void deleteBlog(int id){
+        UserMapper.delete(id);
     }
 
     @ResponseBody
@@ -75,7 +75,7 @@ public class userController {
         int numberOfBlog=UserMapper.count();//total amount of blog
 
         List<userEntity> blog = UserMapper.getBlog(0);
-        System.out.println(blog.toString());
+
         return blog;
 
     }
@@ -84,6 +84,7 @@ public class userController {
     @RequestMapping(value = "/showContent")
     public String showContent(int id){
         String result = UserMapper.getContent(id);
+
         return result;
     }
 
